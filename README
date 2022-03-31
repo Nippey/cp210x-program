@@ -24,14 +24,14 @@ can be used to access further functions of the CP210x like the general IO pins
 of the CP2103. The goal is not to provide an tty driver, such driver exists
 already for linux and BSD.
 
-Version: 1.0
+Version: 1.1
 Author: Johannes Hölzl <johannes.hoelzl@gmx.de>
 Maintainer: Petr Tesařík <cp210x@tesarici.cz>
 
 Dependencies
 ------------
 
- * Python >= 2.4
+ * Python >= 3.2
  * PyUSB
  
 Since libusb is available on most Linux, Mac OS X and FreeBSD cp210x-program
