@@ -73,7 +73,8 @@ def to_bcd(i):
     assert i >= 0 and i <= 99
     return (i // 10) << 4 | (i % 10)
 
-def to_bcd2( (i, j) ):
+def to_bcd2(xxx_todo_changeme ):
+    (i, j) = xxx_todo_changeme
     return to_bcd(i) << 8 | to_bcd(j)
 
 def from_bcd(num):
@@ -122,7 +123,7 @@ class Cp210xMatch(object):
 
     def __call__(self, dev):
         for pattern in self.patterns:
-            for name, value in pattern.items():
+            for name, value in list(pattern.items()):
                 if getattr(dev, name) != value:
                     return False
             return True
@@ -209,7 +210,7 @@ class Cp210xProgrammer(object):
                               % (res, len(data)))
 
     def _set_config_string(self, value, content, max_desc_size):
-        assert isinstance(content, basestring)
+        assert isinstance(content, str)
         encoded = content.encode('utf-16-le')
         desc_size = len(encoded) + 2
         assert desc_size <= max_desc_size
@@ -352,7 +353,7 @@ class Cp210xProgrammer(object):
             self._set_config(REG_LOCK_VALUE, LCK_UNLOCKED)
 
     def set_values(self, values):
-        for name, value in values.items():
+        for name, value in list(values.items()):
             if name not in ['part_number', 'vendor_string']:
                 getattr(self, "set_" + name) (value)
             
