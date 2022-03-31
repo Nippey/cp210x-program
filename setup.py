@@ -5,7 +5,7 @@ from distutils.core import setup
 
 setup(
     name="cp210x-program",
-    version="0.3",
+    version="1.0",
     description="Provides access to the EEPROM in an Silabs CP210x",
     long_description="""
 The goal of this library is to provide access to the EEPROM of an Silabs CP210x
@@ -26,6 +26,8 @@ Requires:
 """,
     author="Johannes Hölzl",
     author_email="johannes.hoelzl@gmx.de",
+    maintainer="Petr Tesařík",
+    maintainer_email="cp210x@tesarici.cz",
     url="http://cp210x-program.sourceforge.net/",
     license="GNU LGPL",
     platforms="POSIX",
