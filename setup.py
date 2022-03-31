@@ -47,4 +47,7 @@ Requires:
     scripts=[
         'cp210x-program'
     ],
+    install_requires=[
+        'pyusb',
+    ],
 )
