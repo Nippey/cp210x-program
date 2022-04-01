@@ -177,8 +177,10 @@ class Cp210xProgrammer(object):
     def __init__(self, usbdev):
         self.usbdev = usbdev
         self._locked = None
-        self.has_kernel_driver = False
-        self.has_kernel_driver = usbdev.is_kernel_driver_active(0)
+        try:
+            self.has_kernel_driver = usbdev.is_kernel_driver_active(0)
+        except NotImplementedError:
+            self.has_kernel_driver = False
         if self.has_kernel_driver:
             cfg = usbdev.get_active_configuration()
             self.intf = cfg[(0,0)].bInterfaceNumber

@@ -74,9 +74,9 @@ Requires:
 
 	<release>
 		<Version>
-			<name>unstable</name>
-			<created>2007-04-05</created>
-			<revision>0.1</revision>
+			<name>stable</name>
+			<created>2014-06-28</created>
+			<revision>1.0</revision>
 		</Version>
 	</release>
 	

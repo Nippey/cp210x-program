@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from distutils.core import setup
+#from distutils.core import setup
+from setuptools import setup
 
 setup(
     name="cp210x-program",
-    version="0.3",
+    version="1.0",
     description="Provides access to the EEPROM in an Silabs CP210x",
     long_description="""
 The goal of this library is to provide access to the EEPROM of an Silabs CP210x
@@ -26,6 +27,8 @@ Requires:
 """,
     author="Johannes Hölzl",
     author_email="johannes.hoelzl@gmx.de",
+    maintainer="Petr Tesařík",
+    maintainer_email="cp210x@tesarici.cz",
     url="http://cp210x-program.sourceforge.net/",
     license="GNU LGPL",
     platforms="POSIX",
@@ -35,6 +38,7 @@ Requires:
         "Development Status :: 4 - Beta",
         "Topic :: System :: Hardware :: Hardware Drivers",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
         "Operating System :: POSIX :: Linux",
         "Operating System :: POSIX :: BSD :: FreeBSD",
         "Operating System :: MacOS :: MacOS X",
@@ -44,5 +48,8 @@ Requires:
     ],
     scripts=[
         'cp210x-program'
+    ],
+    install_requires=[
+        'pyusb',
     ],
 )
