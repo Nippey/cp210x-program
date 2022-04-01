@@ -1,5 +1,8 @@
+LICENSE
+MANIFEST.in
 README
 cp210x-program
+cp210x-program.doap
 setup.py
 cp210x/__init__.py
 cp210x/cp210x.py
@@ -8,4 +11,7 @@ cp210x/valuefile.py
 cp210x_program.egg-info/PKG-INFO
 cp210x_program.egg-info/SOURCES.txt
 cp210x_program.egg-info/dependency_links.txt
+cp210x_program.egg-info/requires.txt
 cp210x_program.egg-info/top_level.txt
+doc/45-cp210x-programming.rules
+doc/cp210x.txt

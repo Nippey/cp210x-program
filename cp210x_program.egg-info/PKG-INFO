@@ -32,7 +32,6 @@ Classifier: Development Status :: 4 - Beta
 Classifier: Topic :: System :: Hardware :: Hardware Drivers
 Classifier: Programming Language :: Python
 Classifier: Programming Language :: Python :: 2
-Classifier: Programming Language :: Python :: 3
 Classifier: Operating System :: POSIX :: Linux
 Classifier: Operating System :: POSIX :: BSD :: FreeBSD
 Classifier: Operating System :: MacOS :: MacOS X
