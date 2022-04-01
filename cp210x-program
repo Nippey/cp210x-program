@@ -28,6 +28,7 @@ ERR_INTERNAL = -2
 ERR_DEVICE_LOCKED = -3
 ERR_DEVICE_NOT_FOUND = -4
 ERR_DEVICE_ERROR = -5
+ERR_DEVICE_AMBIGOUS = -6
 ERR_OTHER = -100
 
 def error(message, retval=-1):
@@ -128,8 +129,13 @@ def find_device(patterns):
             error("Match be either 'ddd/ddd' or 'hhhh:hhhh'.",
                   ERR_WRONG_INPUT)
                   
-    for dev in cp210x.Cp210xProgrammer.list_devices(usb_patterns):
-        return dev
+    #for dev in cp210x.Cp210xProgrammer.list_devices(usb_patterns):
+    device_list = list(cp210x.Cp210xProgrammer.list_devices(usb_patterns))
+    if len(device_list) == 1:
+        return device_list[0]
+
+    if len(device_list)>1:
+        error("Too many devices found. Use -m Bus/Address pattern.", ERR_DEVICE_AMBIGOUS)
 
     error("No devices found", ERR_DEVICE_NOT_FOUND)
     
